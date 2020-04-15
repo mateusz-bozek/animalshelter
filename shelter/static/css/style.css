@@ -1,4 +1,4 @@
-ć@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
 @import url('https://fonts.googleapis.com/css?family=Ek+Mukta:400,600,700');
 
 body {
@@ -43,10 +43,10 @@ p {
 
 /* --- logo --- */
 .site-logo {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 5x;
     float: left;
-    width: 5%;
+    width: 8%;
 }
 
 .site-logo a.brand {
@@ -160,7 +160,7 @@ p {
 }
 
 #carousel-slider .carousel-indicators li {
-    border: 1px solid #ffbd20;
+    border: 1px solid #26a450;
 }
 
 #carousel-slider a i {
@@ -569,8 +569,8 @@ textarea#message {
 }
 
 #footer {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 0px;
+    padding-bottom: 20px;
     color: #fff;
     background: #26a450;
 }
@@ -591,20 +591,34 @@ textarea#message {
 }
 
 #footer ul > li {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     display: inline-block;
-    margin-left: 15px;
     text-align: center;
+}
+
+.social-share {
+    font-size: 24px;
 }
 
 .midnight-blue {
     text-align: center;
-
 }
 
 .text-center {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 30px;
+}
 
+.footer-arrow {
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+
+#hyperlink {
+    text-decoration: none;
+}
+
+#hyperlink h2:hover {
+    color: #26a450;
 }
