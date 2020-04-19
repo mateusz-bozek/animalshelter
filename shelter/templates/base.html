@@ -1,10 +1,94 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            Schronisko dla Bezdomnych Zwierząt w Krakowie
+        {% endblock title %}
+    </title>
+
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/animate.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/animate.css" %}" rel="stylesheet"/>
+    <link href="{% static "css/prettyPhoto.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+
 </head>
+
 <body>
+<div id="home">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="site-logo">
+                    <a href="/shelter/" class="brand"><img src="{% static "images/logo.png" %}" class="img-responsive"></a>
+                </div>
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/shelter/">Główna</a></li>
+                        <li><a href="#recent">Nowo przybyli</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                        <li><a href="/shelter/animals/">Podopieczni</a></li>
+                        <li><a href="/shelter/submissions/">Nowy dom</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+{% block content %}
+{% endblock content%}
+
+
+<footer id="footer" class="midnight-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 footer-float">
+                <div class="footer-arrow">
+                    <a href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
+                </div>
+            </div>
+
+            <div class="top-bar">
+                <div class="col-lg-12">
+                    <div class="social">
+                        <p>Śledź nas na:</p>
+                        <ul class="social-share">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
+<script src="{% static "js/jquery.isotope.min.js" %}"></script>
+<script src="{% static "js/wow.min.js" %}"></script>
+<script src="{% static "js/jquery.easing.min.js" %}"></script>
+<script src="{% static "js/main.js" %}"></script>
+<script src="{% static "contactform/contactform.js" %}"></script>
 
 </body>
+
 </html>

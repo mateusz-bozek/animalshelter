@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Schronisko dla Bezdomnych Zwierząt w Krakowie - Przysłane wiadomości
+{% endblock title %}
+
+{% block content %}
+    <div class="container after-navbar">
+        <div class="center">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Przysłane wiadomości</h2>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% for message in messages %}
+            <div class="col-md-6 col-md-offset-3 {% if message.status == 0 %}unread-message
+                {% elif message.status == 2 %}responded-message{% endif %}">
+                <h3>Temat: {{ message.subject }}</h3>
+                <p {% if message.status == 0 %}class="unread-message-font"{% endif %}>
+                    Nadawca: {{ message.name }}<br>
+                    Email: {{ message.email }}<br>
+                    Wysłano:
+                    {% load i18n %}
+                    {% language 'pl' %}
+                        {{ message.date }}
+                    {% endlanguage %}
+                </p>
+                <p>Treść wiadomości:<br>{{ message.message }}<br></p>
+                <hr>
+                <div class="text-center">
+                    {% if message.status == 2 %}
+                        <a href="/shelter/admin/messages/unread/{{ message.id }}" style="text-decoration: none">
+                            <button class="btn btn-primary btn-lg new-submission-btn">Oznacz jako nieprzeczytana
+                            </button>
+                        </a>
+                    {% else %}
+                        <a href="/shelter/admin/messages/respond/{{ message.id }}" style="text-decoration: none">
+                            <button class="btn btn-primary btn-lg new-submission-btn">Udzielono odpowiedzi
+                            </button>
+                        </a>
+                    {% endif %}
+                    <a href="/shelter/admin/messages/delete/{{ message.id }}" style="text-decoration: none">
+                        <button class="btn btn-primary btn-lg new-submission-btn">Usuń wiadomość</button>
+                    </a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+{% endblock content %}

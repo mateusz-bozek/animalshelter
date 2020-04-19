@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Schronisko dla Bezdomnych Zwierząt w Krakowie - Dodaj zgłoszenie
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container after-navbar">
+        <div class="center">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Wiadomość wysłana pomyślnie</h2>
+                <hr>
+                <p>Dziękujemy za wiadomość. Odpowiedzi udzielimy na adres mailowy wpisany w formularzu kontaktowym.</p>
+                <div class="text-center">
+                    <a href="/shelter/">
+                        <button class="btn btn-primary btn-lg new-submission-btn">Powrót do strony głównej</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

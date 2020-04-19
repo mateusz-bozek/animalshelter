@@ -1,21 +1,28 @@
+from datetime import datetime
+
 from django.db import models
 
 ANIMAL_TYPE_CHOICES = (
-    (0, 'Pies'),
-    (1, 'Kot'),
-    (2, 'Inny')
+    ('dog', 'Pies'),
+    ('cat', 'Kot'),
+    ('other', 'Inny')
 )
 
 
 class Animal(models.Model):
     name = models.CharField(max_length=64)
-    type = models.IntegerField(default=2, choices=ANIMAL_TYPE_CHOICES)
+    type = models.CharField(max_length=16, default='other', choices=ANIMAL_TYPE_CHOICES)
     race = models.CharField(max_length=128)
-    filename = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='animals')
     description = models.TextField(null=True)
     age = models.IntegerField(null=True)
     date_since = models.DateField(null=True)
     points = models.IntegerField(default=0)
+
+    @property
+    def days(self):
+        date_now = datetime.now().date()
+        return (date_now - self.date_since).days
 
 
 MESSAGE_STATUS = (
@@ -31,6 +38,7 @@ class Message(models.Model):
     subject = models.CharField(max_length=128)
     message = models.TextField()
     status = models.IntegerField(default=0, choices=MESSAGE_STATUS)
+    date = models.DateTimeField(auto_now_add=True)
 
 
 SUBMISSION_STATUS = (
@@ -42,10 +50,10 @@ SUBMISSION_STATUS = (
 
 class Submission(models.Model):
     name = models.CharField(max_length=64)
-    type = models.IntegerField(default=2, choices=ANIMAL_TYPE_CHOICES)
+    type = models.CharField(max_length=16, default='other', choices=ANIMAL_TYPE_CHOICES)
     race = models.CharField(max_length=128)
-    filename = models.CharField(max_length=255)
-    description = models.TextField(null=False)
+    photo = models.ImageField(upload_to='submissions')
+    description = models.TextField(null=True)
     age = models.IntegerField(null=True)
     submission_date = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(default=0, choices=SUBMISSION_STATUS)

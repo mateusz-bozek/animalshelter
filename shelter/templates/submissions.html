@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Schronisko dla Bezdomnych Zwierząt w Krakowie - Nowy dom
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container after-navbar">
+        <div class="center">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Nowy dom</h2>
+                <hr>
+                <p class="lead">Oto zwierzęta, które dzięki Wam otrzymały nowy dom! Serdecznie dziękujemy za wszelkie
+                    zgłoszenia i zachęcamy do kolejnych.<br>
+                    Zaadoptowałeś zwierzaka z naszego schroniska i chcesz się tym podzielić?</p>
+                <div class="text-center">
+                    <a href="/shelter/new-submission/">
+                        <button class="btn btn-primary btn-lg new-submission-btn">Dodaj zgłoszenie</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="col-lg-12">
+            <ul class="recent-filter text-center">
+                <li><a class="btn btn-default active" href="#" data-filter="*">Wszystkie</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".dog">Psy</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".cat">Koty</a></li>
+                <li><a class="btn btn-default" href="#" data-filter=".other">Pozostałe</a></li>
+            </ul>
+
+            <div class="row">
+                <div class="recent-items">
+
+                    {% for animal in submissions %}
+                        <div class="recent-item {{ animal.type }} col-xs-12 col-sm-4 col-md-3">
+                            <div class="recent-animals-wrap">
+                                <img class="img-responsive" src="{{ animal.photo.url }}"
+                                     alt="">
+                                <div class="overlay">
+                                    <div class="recent-animals-inner">
+                                        <h3><a href="shelter/animal/{{ animal.id }}"><b>{{ animal.name }}</b></a>
+                                        </h3>
+                                        <p class="animal-description"><b>Wiek: </b>{{ animal.age }}<br>
+                                            <b>Rasa: </b>{{ animal.race }}<br>
+                                            <a class="preview" href="{{ animal.photo.url }}"
+                                               rel="prettyPhoto"><i class="fa fa-eye"></i> Powiększ</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -23,21 +23,21 @@ jQuery(function ($) {
     $(".navbar-collapse.collapse").removeClass('in');
   });
 
-  // portfolio filter
+  // recent filter
   $(window).load(function () {
     'use strict';
-    var $portfolio_selectors = $('.portfolio-filter >li>a');
-    var $portfolio = $('.portfolio-items');
-    $portfolio.isotope({
-      itemSelector: '.portfolio-item',
+    var $recent_selectors = $('.recent-filter >li>a');
+    var $recent = $('.recent-items');
+    $recent.isotope({
+      itemSelector: '.recent-item',
       layoutMode: 'fitRows'
     });
 
-    $portfolio_selectors.on('click', function () {
-      $portfolio_selectors.removeClass('active');
+    $recent_selectors.on('click', function () {
+      $recent_selectors.removeClass('active');
       $(this).addClass('active');
       var selector = $(this).attr('data-filter');
-      $portfolio.isotope({
+      $recent.isotope({
         filter: selector
       });
       return false;

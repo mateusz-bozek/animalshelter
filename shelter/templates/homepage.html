@@ -1,50 +1,7 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Schronisko dla Bezdomnych Zwierząt w Krakowie</title>
 
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet">
-    <link href="{% static "css/animate.min.css" %}" rel="stylesheet">
-    <link href="{% static "css/animate.css" %}" rel="stylesheet"/>
-    <link href="{% static "css/prettyPhoto.css" %}" rel="stylesheet">
-    <link href="{% static "css/style.css" %}" rel="stylesheet">
-
-</head>
-
-<body>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="row">
-            <div class="site-logo">
-                <a href="" class="brand"><img src="{% static "images/logo.png" %}"
-                                                                          class="img-responsive"></a>
-            </div>
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                    <i class="fa fa-bars"></i>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<div id="home">
+{% block content %}
     <div class="slider">
         <div id="about-slider">
             <div id="carousel-slider" class="carousel slide" data-ride="carousel">
@@ -76,423 +33,309 @@
             </div>
         </div>
     </div>
-</div>
 
-<section id="about">
     <div class="container">
         <div class="center">
             <div class="col-md-6 col-md-offset-3">
-                <h2>About Us</h2>
+                <h2>Krakowskie Schronisko dla Bezdomnych Zwierząt</h2>
                 <hr>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut</p>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 wow fadeInRight">
-                <img src="{% static "images/1.png" %}" class="img-responsive"/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni autem minus sint, commodi.</p>
 
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="center">
+                    <div class="col-md-6 col-md-offset-3">
+                        <a href="/shelter/animals" id="hyperlink"><h2 id="hyperlink">Nasi podopieczni</h2></a>
+                        <hr>
+                        <p class="lead">Kliknij powyżej aby zobaczyć naszą aktualną bazę wszystkich zwierząt
+                            mieszkających w naszym schronisku.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInLeft">
+                    <h3>Psy</h3>
+                    <img src="{% static "images/dog.png" %}" alt="">
+                    <p>Czworonożne szczęście! Jak lepiej można opisać najlepszego przyjaciela człowieka.</p>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp">
+                    <h3>Koty</h3>
+                    <img src="{% static "images/cat.png" %}" alt="">
+                    <p>Nie chce się wychodzić na spacery?</p>
+                </div>
+
+                <div class="col-md-4 wow fadeInRight">
+                    <h3>Pozostałe zwierzęta</h3>
+                    <img src="{% static "images/footprint.png" %}" alt="">
+                    <p>Opiekujemy się nie tylko czworonożnymi zwierzakami! Zobacz naszych latających (i nie tylko!)
+                        podopiecznych.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="col-sm-6 wow fadeInDown">
-                <div class="accordion">
-                    <div class="panel-group" id="accordion1">
-                        <div class="panel panel-default">
-                            <div class="panel-heading active">
-                                <h3 class="panel-title">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseOne1">
-                                        Web Design
-                                        <i class="fa fa-angle-right pull-right"></i>
-                                    </a>
-                                </h3>
-                            </div>
 
-                            <div id="collapseOne1" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <div class="media accordion-inner">
-                                        <div class="pull-left">
-                                            <img class="img-responsive" src="{% static "images/accordion1.png" %}">
-                                        </div>
-                                        <div class="media-body">
-                                            <h4>Adipisicing elit</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt
-                                                ut labore</p>
+    <section id="recent">
+        <div class="container">
+            <div class="center">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>Nowo przybyli</h2>
+                    <hr>
+                    <p class="lead">Poniżej znajdują się nasi najmłodsi stażem podopieczni.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-lg-12">
+                <ul class="recent-filter text-center">
+                    <li><a class="btn btn-default active" href="#" data-filter="*">Wszystkie</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".dog">Psy</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".cat">Koty</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".other">Pozostałe</a></li>
+                </ul>
+
+                <div class="row">
+                    <div class="recent-items">
+
+                        {% for animal in recent_animals %}
+                            <div class="recent-item {{ animal.type }} col-xs-12 col-sm-4 col-md-3">
+                                <div class="recent-animals-wrap">
+                                    <img class="img-responsive" src="{{ animal.photo.url }}"
+                                         alt="">
+                                    <div class="overlay">
+                                        <div class="recent-animals-inner">
+                                            <h3><a href="shelter/animal/{{ animal.id }}"><b>{{ animal.name }}</b></a>
+                                            </h3>
+                                            <p class="animal-description"><b>Wiek: </b>{{ animal.age }}<br>
+                                                <b>Rasa: </b>{{ animal.race }}<br>
+                                                <b>Dni w schronisku: </b>{{ animal.days }}<br>
+                                                <a class="preview" href="{{ animal.photo.url }}"
+                                                   rel="prettyPhoto"><i class="fa fa-eye"></i> Powiększ</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endfor %}
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseTwo1">
-                                        Lorem ipsum dolor sit amet
-                                        <i class="fa fa-angle-right pull-right"></i>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapseTwo1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid.
-                                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                        quinoa nesciunt
-                                        laborum eiusmod. Brunch 3 wolf moon tempor.<br> Lorem ipsum dolor sit amet,
-                                        consectetur
-                                        adipisicing elit, sed do eiusmod tempor incididunt ut non cupidatat skateboard
-                                        dolor brunch.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseThree1">
-                                        Lorem ipsum dolor sit amet
-                                        <i class="fa fa-angle-right pull-right"></i>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapseThree1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid.
-                                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                        quinoa nesciunt
-                                        laborum eiusmod. Brunch 3 wolf moon tempor.<br> Lorem ipsum dolor sit amet,
-                                        consectetur
-                                        adipisicing elit, sed do eiusmod tempor incididunt ut non cupidatat skateboard
-                                        dolor brunch.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
-                                       href="#collapseFour1">
-                                        Lorem ipsum dolor sit amet
-                                        <i class="fa fa-angle-right pull-right"></i>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div id="collapseFour1" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid.
-                                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                                        quinoa nesciunt
-                                        laborum eiusmod. Brunch 3 wolf moon tempor.<br> Lorem ipsum dolor sit amet,
-                                        consectetur
-                                        adipisicing elit, sed do eiusmod tempor incididunt ut non cupidatat skateboard
-                                        dolor brunch.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="portfolio">
-    <div class="container">
-        <div class="center">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Portfolio</h2>
-                <hr>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                    incididunt ut</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="col-lg-12">
-            <ul class="portfolio-filter text-center">
-                <li><a class="btn btn-default active" href="#" data-filter="*">Wszystkie</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Psy</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".html">Koty</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".wordpress">Pozostałe</a></li>
-            </ul>
-
-            <div class="row">
-                <div class="portfolio-items">
-                    <div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="{% static "images/portfolio/recent/item1.png" %}" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority</p>
-                                    <a class="preview" href="{% static "images/portfolio/full/item1.png" %}"
-                                       rel="prettyPhoto"><i
-                                            class="fa fa-eye"></i>
-                                        View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item joomla bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="{% static "images/portfolio/recent/item2.png" %}" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority</p>
-                                    <a class="preview" href="{% static "images/portfolio/full/item2.png" %}"
-                                       rel="prettyPhoto"><i
-                                            class="fa fa-eye"></i>
-                                        View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item bootstrap wordpress col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="{% static "images/portfolio/recent/item3.png" %}" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority</p>
-                                    <a class="preview" href="{% static "images/portfolio/full/item3.png" %}" rel="
-                                       prettyPhoto"><i
-                                            class="fa fa-eye"></i>
-                                        View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item joomla wordpress apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="{% static "images/portfolio/recent/item4.png" %}" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority</p>
-                                    <a class="preview" href="{% static "images/portfolio/full/item4.png" %}"
-                                       rel="prettyPhoto"><i
-                                            class="fa fa-eye"></i>
-                                        View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="{% static "images/portfolio/recent/item5.png" %}" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority</p>
-                                    <a class="preview" href="{% static "images/portfolio/full/item5.png" %}"
-                                       rel="prettyPhoto"><i
-                                            class="fa fa-eye"></i>
-                                        View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item wordpress html apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="{% static "images/portfolio/recent/item6.png" %}" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority</p>
-                                    <a class="preview" href="{% static "images/portfolio/full/item6.png" %}"
-                                       rel="prettyPhoto"><i
-                                            class="fa fa-eye"></i>
-                                        View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item wordpress html col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="{% static "images/portfolio/recent/item7.png" %}" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority</p>
-                                    <a class="preview" href="{% static "images/portfolio/full/item7.png" %}"
-                                       rel="prettyPhoto"><i
-                                            class="fa fa-eye"></i>
-                                        View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-item wordpress html bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="{% static "images/portfolio/recent/item8.png" %}" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority</p>
-                                    <a class="preview" href="{% static "images/portfolio/full/item8.png" %}"
-                                       rel="prettyPhoto"><i
-                                            class="fa fa-eye"></i>
-                                        Szczegóły</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="features">
-    <div class="container">
-        <div class="row">
-            <div class="center">
-                <div class="col-md-6 col-md-offset-3">
-                    <a href="animals/4" id="hyperlink"><h2 id="hyperlink">Nasi podopieczni</h2></a>
-                    <hr>
-                    <p class="lead">Zobacz naszą aktualną bazę wszystkich zwierząt mieszkających w naszym schronisku
-                        lub wybierz jedną z dostępnych kategorii.</p>
-                </div>
-            </div>
 
-            <div class="col-md-4 wow fadeInLeft">
-                <h3>Psy</h3>
-                <a href="animals/0"><img src="{% static "images/dog.png" %}" alt=""></a>
-                <p>Czworonożne szczęście! Jak lepiej można opisać najlepszego przyjaciela człowieka.</p>
-            </div>
 
-            <div class="col-md-4 wow fadeInUp">
-                <h3>Koty</h3>
-                <a href="animals/1"><img src="{% static "images/cat.png" %}" alt=""></a>
-                <p>Nie chce się wychodzić na spacery?</p>
-            </div>
-
-            <div class="col-md-4 wow fadeInRight">
-                <h3>Pozostałe zwierzęta</h3>
-                <a href="animals/2"><img src="{% static "images/footprint.png" %}" alt=""></a>
-                <p>Opiekujemy się nie tylko czworonożnymi zwierzakami! Zobacz naszych latających (i nie tylko!)
-                    podopiecznych.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12076.71595183699!2d19.882967230892483!3d50.046354741527956!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe5a551f2f872ab1!2sSchronisko%20dla%20Bezdomnych%20Zwierz%C4%85t%20Krakowskie%20Towarzystwo%20Opieki%20nad%20Zwierz%C4%99tami!5e0!3m2!1spl!2spl!4v1586688907584!5m2!1spl!2spl"
-            width="100%" height="380" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-            tabindex="0"></iframe>
-</div>
-<section id="contact">
-    <div class="contact-page">
+    <section id="about">
         <div class="container">
             <div class="center">
-                <h2>Kontakt</h2>
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>O nas</h2>
+                    <hr>
+                    <p class="lead">Misją Krakowskiego Schroniska dla Bezdomnych Zwierząt jest zapewnienie wszystkim
+                        naszym
+                        podopiecznym zdrowia i jak najlepszych warunków bytowania oraz znalezienie dla jak największej
+                        rzeszy podopiecznych nowych właścicieli i domów.</p>
+                </div>
             </div>
-            <div class="row contact-wrap">
-                <div class="col-md-8 col-md-offset-2">
-                    <div id="sendmessage">Twoja wiadomość została wysłana! Dziękujemy!</div>
-                    <div id="errormessage"></div>
-                    <form action="" method="post" role="form" class="contactForm">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Twoje imię"
-                                   data-rule="minlen:3"
-                                   data-msg="Proszę wpisać co najmniej 3 znaki"/>
-                            <div class="validation"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInRight">
+                    <img src="{% static "images/1.png" %}" class="img-responsive"/>
+                    <p>Schronisko dla Bezdomnych Zwierząt przyjmuje zwierzęta przez całą dobę, a wydaje nowym opiekunom
+                        w godzinach:<br>
+                        10:00 - 14:00 i 15:00 - 17:00 przez wszystkie dni tygodnia (w niedziele i święta także)</p>
+                </div>
+
+                <div class="col-sm-6 wow fadeInDown">
+                    <div class="accordion">
+                        <div class="panel-group" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading active">
+                                    <h3 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
+                                           href="#collapseOne1">
+                                            Schronisko
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </a>
+                                    </h3>
+                                </div>
+
+                                <div id="collapseOne1" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <div class="media accordion-inner">
+                                            <div class="pull-left">
+                                                <img class="img-responsive" src="{% static "images/accordion1.png" %}">
+                                            </div>
+                                            <div class="media-body" style="display:">
+                                                <p>W naszym schronisku znajduje się wiele spragnionych uczucia i domu
+                                                    psów i
+                                                    kotów , które z utęsknieniem czkają na ludzi chcących dać im
+                                                    prawdziwy
+                                                    dom i opiekę. W schronisku przebywa przeciętnie około 200-300 psów i
+                                                    100- 300 (w zależności od pory roku) kotów różnych ras i
+                                                    wielkości.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
+                                           href="#collapseTwo1">
+                                            Adopcja
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div id="collapseTwo1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Podstawowe informacje odnośnie warunków adopcji :<br>
+                                            - adopcja zwierząt ze Schroniska jest bezpłatna, datki na rzecz Schroniska
+                                            przy
+                                            adopcji są dobrowolne i w dowolnej wysokości<br>
+                                            - warunkiem adopcji jest podpisanie umowy adopcyjnej na podstawie dowodu
+                                            osobistego z adresem zamieszkania<br>
+                                            Dodatkowo prosimy by adoptując psa zabrać ze sobą smycz, obroże, kaganiec. W
+                                            przypadku kota należy zaopatrzeć się w transporter.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
+                                           href="#collapseThree1">
+                                            Przygarnij weterana
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div id="collapseThree1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Dla niektórych zwierzaków przyjaźń z człowiekiem to coś zupełnie obcego, gdyż
+                                            los
+                                            dał im zaznać tylko cierpienia. Złamane na ciele i duszy, nie rozumieją, że
+                                            człowiek może podarować im również miłość. W ich oczach nie ma już nadziei.
+                                            Jest
+                                            tylko niezgłębiony smutek i strach przed ludźmi. Ludzka bezduszność
+                                            sprawiłą, że
+                                            brakuje im chęci do życia.<br>
+                                            Pokażmy tym właśnie zwierzętom, że ich pieskie życie może być jeszcze
+                                            szczęśliwe, że świat nie kończy sie na czterech ścianach ciasnego
+                                            schroniskowego
+                                            boksu. Na pewno odwdzięczą się nam miłością i oddaniem.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1"
+                                           href="#collapseFour1">
+                                            Pomoc dla schroniska
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div id="collapseFour1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Krakowskie Schronisko dla Bezdomnych Zwierząt składa serdeczne podziękowania
+                                            i
+                                            wyrazy wdzięczności wszystkim sponsorom instytucjonalnym i osobom prywatnym
+                                            wspierającym naszą działalność.<br>
+                                            Wszystkich ludzi o szczerym i otwartym sercu na niedolę zwierząt, a także
+                                            wszystkie firmy przyjazne czworonogom prosimy o wsparcie finansowe i
+                                            rzeczowe.<br>
+                                            Wpłaty wspierające naszą działalność statutową można dokonywać na
+                                            następujący
+                                            rachunek bankowy:<br>
+                                            <b>Bank Gospodarki Żywnościowej S.A.<br>
+                                                16 1111 4343 2323 0000 2312 3333<br>
+                                                BIC (SWIFT): GOPZPLPW<br>
+                                                tytuł wpłaty: DAROWIZNA SCHRONISKO</b></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Twój email"
-                                   data-rule="email"
-                                   data-msg="Proszę podać poprawny adres email"/>
-                            <div class="validation"></div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject"
-                                   placeholder="Temat wiadomości"
-                                   data-rule="minlen:3"
-                                   data-msg="Proszę wpisać co najmniej 3 znaki"/>
-                            <div class="validation"></div>
-                        </div>
-                        <div class="form-group">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12076.71595183699!2d19.882967230892483!3d50.046354741527956!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe5a551f2f872ab1!2sSchronisko%20dla%20Bezdomnych%20Zwierz%C4%85t%20Krakowskie%20Towarzystwo%20Opieki%20nad%20Zwierz%C4%99tami!5e0!3m2!1spl!2spl!4v1586688907584!5m2!1spl!2spl"
+                width="100%" height="380" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+    </div>
+    <section id="contact">
+        <div class="contact-page">
+            <div class="container">
+                <div class="center">
+                    <h2>Kontakt</h2>
+                </div>
+                <div class="row contact-wrap">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div id="sendmessage">Twoja wiadomość została wysłana! Dziękujemy!</div>
+                        <div id="errormessage"></div>
+                        <form action="" method="post" role="form" class="contactForm">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Twoje imię"
+                                       data-rule="minlen:3"
+                                       data-msg="Proszę wpisać co najmniej 3 znaki"/>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email"
+                                       placeholder="Twój email"
+                                       data-rule="email"
+                                       data-msg="Proszę podać poprawny adres email"/>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject"
+                                       placeholder="Temat wiadomości"
+                                       data-rule="minlen:3"
+                                       data-msg="Proszę wpisać co najmniej 3 znaki"/>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
                             <textarea class="form-control" name="message" rows="5" data-rule="required"
                                       data-msg="Napisz coś do nas"
                                       placeholder="Treść wiadomości"></textarea>
-                            <div class="validation"></div>
-                        </div>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="captcha" id="captcha"
+                                       placeholder="Ile to jest {{ number1 }} + {{ number2 }}"
+                                       data-rule="captcha:{{ total }}"
+                                       data-msg="Niepoprawny wynik, proszę podać poprawną liczbę"/>
+                                <div class="validation"></div>
+                            </div>
 
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">Wyślij wiadomość</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer id="footer" class="midnight-blue">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="footer-arrow">
-                    <a href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
-                </div>
-            </div>
-
-            <div class="top-bar">
-                <div class="col-lg-12">
-                    <div class="social">
-                        <p>Śledź nas na:</p>
-                        <ul class="social-share">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        </ul>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Wyślij wiadomość</button>
+                            </div>
+                            {% csrf_token %}
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script src="{% static "js/jquery.js" %}"></script>
-<script src="{% static "js/bootstrap.min.js" %}"></script>
-<script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
-<script src="{% static "js/jquery.isotope.min.js" %}"></script>
-<script src="{% static "js/wow.min.js" %}"></script>
-<script src="{% static "js/jquery.easing.min.js" %}"></script>
-<script src="{% static "js/main.js" %}"></script>
-<script src="{% static "contactform/contactform.js" %}"></script>
-
-</body>
-
-</html>
+{% endblock content %}

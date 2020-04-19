@@ -81,7 +81,7 @@ p {
 
 .navbar-fixed-top ul.nav li a {
     font-size: 14px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #000;
     text-transform: uppercase;
     font-weight: 700;
@@ -223,18 +223,18 @@ p {
 }
 
 
-.portfolio-items,
-.portfolio-filter {
+.recent-items,
+.recent-filter {
     list-style: none outside none;
     margin: 0 0 40px 0;
     padding: 0;
 }
 
-.portfolio-filter > li {
+.recent-filter > li {
     display: inline-block;
 }
 
-.portfolio-filter > li a {
+.recent-filter > li a {
     background: none repeat scroll 0 0 #FFFFFF;
     font-size: 14px;
     font-weight: 400;
@@ -249,8 +249,8 @@ p {
     border-radius: 0;
 }
 
-.portfolio-filter > li a:hover,
-.portfolio-filter > li a.active {
+.recent-filter > li a:hover,
+.recent-filter > li a.active {
     color: #fff;
     background: #26a450;
     border: 1px solid #26a450;
@@ -258,7 +258,7 @@ p {
     -webkit-box-shadow: none;
 }
 
-.portfolio-items > li {
+.recent-items > li {
     float: left;
     padding: 0;
     -webkit-box-sizing: border-box;
@@ -266,7 +266,7 @@ p {
     box-sizing: border-box;
 }
 
-.portfolio-item {
+.recent-item {
     margin: 0;
     padding: 0;
 }
@@ -330,15 +330,15 @@ p {
 }
 
 
-.recent-work-wrap {
+.recent-animals-wrap {
     position: relative;
 }
 
-.recent-work-wrap img {
+.recent-animals-wrap img {
     width: 100%;
 }
 
-.recent-work-wrap .recent-work-inner {
+.recent-animals-wrap .recent-animals-inner {
     top: 0;
     background: transparent;
     opacity: .8;
@@ -347,16 +347,16 @@ p {
     margin-bottom: 0;
 }
 
-.recent-work-wrap .recent-work-inner h3 {
+.recent-animals-wrap .recent-animals-inner h3 {
     margin: 10px 0;
 }
 
-.recent-work-wrap .recent-work-inner h3 a {
+.recent-animals-wrap .recent-animals-inner h3 a {
     font-size: 24px;
     color: #fff;
 }
 
-.recent-work-wrap .overlay {
+.recent-animals-wrap .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -371,10 +371,14 @@ p {
     -moz-transition: opacity 500ms;
     -o-transition: opacity 500ms;
     transition: opacity 500ms;
-    padding: 30px;
+    padding: 10px;
 }
 
-.recent-work-wrap .overlay .preview {
+.animal-description {
+    line-height: normal;
+}
+
+.recent-animals-wrap .overlay .preview {
     bottom: 0;
     display: inline-block;
     height: 35px;
@@ -385,7 +389,7 @@ p {
     color: #fff;
 }
 
-.recent-work-wrap:hover .overlay {
+.recent-animals-wrap:hover .overlay {
     opacity: 1;
 }
 
@@ -422,6 +426,7 @@ p {
 
 .panel-body {
     padding: 20px 20px 10px;
+    display: block;
 }
 
 .panel-group .panel + .panel {
@@ -476,8 +481,8 @@ a.accordion-toggle i {
 }
 
 #features {
-    margin-top: 50px;
-    padding: 50px;
+    margin-top: 0px;
+    padding: 0px 50px 50px 50px;
     text-align: center;
 }
 
@@ -621,4 +626,30 @@ textarea#message {
 
 #hyperlink h2:hover {
     color: #26a450;
+}
+
+.footer-float {
+    float: none;
+}
+
+
+.after-navbar {
+    margin-top: 130px;
+    margin-bottom: 20px;
+}
+
+.new-submission-btn {
+    background-color: #eee;
+}
+
+.unread-message {
+    background-color: #eee;
+}
+
+.unread-message-font {
+    font-weight: bold;
+}
+
+.responded-message {
+    color: #eee
 }
